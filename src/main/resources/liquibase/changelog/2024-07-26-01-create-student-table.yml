@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2024-07-26-01-create-student-table
+      author: Mirza Dadasov
+      description: " student create table"
+      changes:
+        - createTable:
+            tableName: student
+            columns:
+              - column:
+                  name: ID
+                  type: SERIAL
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_STUDENT_ID
+              - column:
+                  name: NAME
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: SURNAME
+                  type: VARCHAR(255)
+                  constraints:
+                    defaultValue:  true
+              - column:
+                  name: ADDRESS
+                  type: VARCHAR(255)
+                  constraints:
+                    defaultValue: true
+              - column:
+                  name: PHONE_NUMBER
+                  type: BIGINT
+                  constraints:
+                    defaultValue: true
+              - column:
+                  name: CREATED_AT
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: true
+              - column:
+                  name: UPDATED_AT
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: true
